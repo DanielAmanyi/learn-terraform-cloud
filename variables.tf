@@ -4,8 +4,12 @@ variable "region" {
 }
 
 variable "instance_type" {
+  # type = map
   description = "Type of EC2 instance to provision"
-  default     = "t2.micro"
+  default     = {
+    main = "t2.micro"
+    Dev = "t2.nano"
+    Test = "t3.medium"}
 }
 
 variable "instance_name" {
